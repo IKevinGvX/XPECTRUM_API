@@ -1,0 +1,4623 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Xpectrum_API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Aeronaves": {
+      "get": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Aeronaves/{id}": {
+      "get": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeronave"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeronave"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Aeronaves/search/{query}": {
+      "get": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeronave"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Aeronaves/capacity/total": {
+      "get": {
+        "tags": [
+          "Aeronaves"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Aeropuertos": {
+      "get": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Aeropuertos/{id}": {
+      "get": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Aeropuertos/search/{query}": {
+      "get": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/aeropuerto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Asientos": {
+      "get": {
+        "tags": [
+          "Asientos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/asiento"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/asiento"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/asiento"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Asientos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Asientos/{id}": {
+      "get": {
+        "tags": [
+          "Asientos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Asientos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Asientos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Boletos": {
+      "get": {
+        "tags": [
+          "Boletos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Boletos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Boletos/{id}": {
+      "get": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/boleto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns": {
+      "get": {
+        "tags": [
+          "CheckIns"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/checkin"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/checkin"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/checkin"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CheckIns"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CheckIns/{id}": {
+      "get": {
+        "tags": [
+          "CheckIns"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CheckIns"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CheckIns"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ConfiguracionSistema": {
+      "get": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/configuracionsistema"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/configuracionsistema"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/configuracionsistema"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ConfiguracionSistema/{id}": {
+      "get": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Equipajes": {
+      "get": {
+        "tags": [
+          "Equipajes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/equipaje"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/equipaje"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/equipaje"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Equipajes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Equipajes/{id}": {
+      "get": {
+        "tags": [
+          "Equipajes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Equipajes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Equipajes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/logaccesoes": {
+      "get": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/logacceso"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/logacceso"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/logacceso"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/logaccesoes/{id}": {
+      "get": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/notificacions": {
+      "get": {
+        "tags": [
+          "notificacions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/notificacion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/notificacion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/notificacion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "notificacions"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notificacions/{id}": {
+      "get": {
+        "tags": [
+          "notificacions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "notificacions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "notificacions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pagoes": {
+      "get": {
+        "tags": [
+          "pagoes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pago"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pago"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pago"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pagoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pagoes/{id}": {
+      "get": {
+        "tags": [
+          "pagoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pagoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pagoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/pasajeroreservas": {
+      "get": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pasajeroreserva"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pasajeroreserva"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/pasajeroreserva"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pasajeroreservas/{id}": {
+      "get": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/permisoes": {
+      "get": {
+        "tags": [
+          "permisoes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/permiso"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/permiso"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/permiso"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "permisoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/permisoes/{id}": {
+      "get": {
+        "tags": [
+          "permisoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "permisoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "permisoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/reservas": {
+      "get": {
+        "tags": [
+          "reservas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reserva"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reserva"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reserva"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "reservas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reservas/{id}": {
+      "get": {
+        "tags": [
+          "reservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "reservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "reservas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/reservaservicios": {
+      "get": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reservaservicio"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reservaservicio"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/reservaservicio"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reservaservicios/{id}": {
+      "get": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Roles": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rol"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rol"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Roles/{id}": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Roles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RolesPermisos": {
+      "get": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rolpermiso"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rolpermiso"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/rolpermiso"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/RolesPermisos/{id}": {
+      "get": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ServiciosAdicionales": {
+      "get": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/servicioadicional"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/servicioadicional"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/servicioadicional"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ServiciosAdicionales/{id}": {
+      "get": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/tickets": {
+      "get": {
+        "tags": [
+          "tickets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ticket"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ticket"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ticket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tickets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/{id}": {
+      "get": {
+        "tags": [
+          "tickets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "tickets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tickets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/usuariorols": {
+      "get": {
+        "tags": [
+          "usuariorols"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuariorol"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuariorol"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuariorol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "usuariorols"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/usuariorols/{id}": {
+      "get": {
+        "tags": [
+          "usuariorols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "usuariorols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "usuariorols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/usuarios": {
+      "get": {
+        "tags": [
+          "usuarios"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuario"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuario"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/usuario"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/usuarios/{id}": {
+      "get": {
+        "tags": [
+          "usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "aeronave": {
+        "type": "object",
+        "properties": {
+          "aeronaveid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "capacidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matricula": {
+            "type": "string",
+            "nullable": true
+          },
+          "vuelos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/vuelo"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "aeropuerto": {
+        "type": "object",
+        "properties": {
+          "aeropuertoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoiata": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
+            "type": "string",
+            "nullable": true
+          },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
+          "vuelosorigen": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/vuelo"
+            },
+            "nullable": true
+          },
+          "vuelosdestino": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/vuelo"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "asiento": {
+        "type": "object",
+        "properties": {
+          "asientoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vueloid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroasiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "clase": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoasiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "vuelo": {
+            "$ref": "#/components/schemas/vuelo"
+          },
+          "pasajerosreservas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/pasajeroreserva"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "boleto": {
+        "type": "object",
+        "properties": {
+          "boletoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservaid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigoboleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaemision": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estadoboleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "reserva": {
+            "$ref": "#/components/schemas/reserva"
+          },
+          "checkins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/checkin"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "checkin": {
+        "type": "object",
+        "properties": {
+          "checkinid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "boletoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechacheckin": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "metodocheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "tarjetaembarque": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadocheckin": {
+            "type": "string",
+            "nullable": true
+          },
+          "boleto": {
+            "$ref": "#/components/schemas/boleto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "configuracionsistema": {
+        "type": "object",
+        "properties": {
+          "configuracionsistemaid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clave": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "equipaje": {
+        "type": "object",
+        "properties": {
+          "equipajeid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "peso": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipoequipaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoequipaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "reserva": {
+            "$ref": "#/components/schemas/reserva"
+          }
+        },
+        "additionalProperties": false
+      },
+      "logacceso": {
+        "type": "object",
+        "properties": {
+          "logaccesoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechahora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "accion": {
+            "type": "string",
+            "nullable": true
+          },
+          "iporigen": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/usuario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "notificacion": {
+        "type": "object",
+        "properties": {
+          "notificacionid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tiponotificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "mensaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaenvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estadolectura": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/usuario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "pago": {
+        "type": "object",
+        "properties": {
+          "pagoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechapago": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "metodopago": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadopago": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenciapago": {
+            "type": "string",
+            "nullable": true
+          },
+          "reserva": {
+            "$ref": "#/components/schemas/reserva"
+          }
+        },
+        "additionalProperties": false
+      },
+      "pasajeroreserva": {
+        "type": "object",
+        "properties": {
+          "pasajeroreservaid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentotipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentonumero": {
+            "type": "string",
+            "nullable": true
+          },
+          "edad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "asientoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reserva": {
+            "$ref": "#/components/schemas/reserva"
+          },
+          "asiento": {
+            "$ref": "#/components/schemas/asiento"
+          }
+        },
+        "additionalProperties": false
+      },
+      "permiso": {
+        "type": "object",
+        "properties": {
+          "permisocodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombrepermiso": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "rolespermisos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/rolpermiso"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "reserva": {
+        "type": "object",
+        "properties": {
+          "reservaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vueloId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaReserva": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estadoReserva": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalPago": {
+            "type": "number",
+            "format": "double"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/usuario"
+          },
+          "vuelo": {
+            "$ref": "#/components/schemas/vuelo"
+          },
+          "pasajerosReservas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/pasajeroreserva"
+            },
+            "nullable": true
+          },
+          "reservaServicios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/reservaservicio"
+            },
+            "nullable": true
+          },
+          "pagos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/pago"
+            },
+            "nullable": true
+          },
+          "boletos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/boleto"
+            },
+            "nullable": true
+          },
+          "equipajes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/equipaje"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "reservaservicio": {
+        "type": "object",
+        "properties": {
+          "reservaservicioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservaid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "servicioadicionalid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precio": {
+            "type": "number",
+            "format": "double"
+          },
+          "reserva": {
+            "$ref": "#/components/schemas/reserva"
+          },
+          "servicioAdicional": {
+            "$ref": "#/components/schemas/servicioadicional"
+          }
+        },
+        "additionalProperties": false
+      },
+      "rol": {
+        "type": "object",
+        "properties": {
+          "rolid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombrerol": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuariosroles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/usuariorol"
+            },
+            "nullable": true
+          },
+          "rolespermisos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/rolpermiso"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "rolpermiso": {
+        "type": "object",
+        "properties": {
+          "rolpermisoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rolid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "permisocodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "$ref": "#/components/schemas/rol"
+          },
+          "permiso": {
+            "$ref": "#/components/schemas/permiso"
+          }
+        },
+        "additionalProperties": false
+      },
+      "servicioadicional": {
+        "type": "object",
+        "properties": {
+          "servicioadicionalid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreservicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "double"
+          },
+          "reservaservicios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/reservaservicio"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ticket": {
+        "type": "object",
+        "properties": {
+          "ticketid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechacreacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "asunto": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoticket": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechacierre": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/usuario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "usuario": {
+        "type": "object",
+        "properties": {
+          "usuarioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "contraseñahash": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipousuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferenciasnotificaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecharegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reservas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/reserva"
+            },
+            "nullable": true
+          },
+          "logsaccesos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/logacceso"
+            },
+            "nullable": true
+          },
+          "notificaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/notificacion"
+            },
+            "nullable": true
+          },
+          "tickets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ticket"
+            },
+            "nullable": true
+          },
+          "usuarioroles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/usuariorol"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "usuariorol": {
+        "type": "object",
+        "properties": {
+          "usuariorolid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuarioid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rolid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/usuario"
+          },
+          "rol": {
+            "$ref": "#/components/schemas/rol"
+          }
+        },
+        "additionalProperties": false
+      },
+      "vuelo": {
+        "type": "object",
+        "properties": {
+          "vueloid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigovuelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "origenid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "destinoid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechasalida": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "horasalida": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "fechallegada": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "horallegada": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "estadovuelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "aeronaveid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "origen": {
+            "$ref": "#/components/schemas/aeropuerto"
+          },
+          "destino": {
+            "$ref": "#/components/schemas/aeropuerto"
+          },
+          "aeronave": {
+            "$ref": "#/components/schemas/aeronave"
+          },
+          "reservas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/reserva"
+            },
+            "nullable": true
+          },
+          "asientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/asiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
