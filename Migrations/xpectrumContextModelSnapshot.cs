@@ -626,52 +626,74 @@ namespace Xpectrum_API.Migrations
                 });
 
             modelBuilder.Entity("xpectrum_api.models.vuelo", b =>
-                {
-                    b.Property<int>("vueloid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+            {
+                b.Property<int>("vueloid")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("vueloid"));
+                SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("vueloid"));
 
-                    b.Property<int>("aeronaveid")
-                        .HasColumnType("int");
+                b.Property<int>("aeronaveid")
+                    .HasColumnType("int");
 
-                    b.Property<string>("codigovuelo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("codigovuelo")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("destinoid")
-                        .HasColumnType("int");
+                b.Property<int>("destinoid")
+                    .HasColumnType("int");
 
-                    b.Property<string>("estadovuelo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("estadovuelo")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("fechallegada")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("fechallegada")
+                    .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("fechasalida")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("fechasalida")
+                    .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("horallegada")
-                        .HasColumnType("time");
+                b.Property<TimeSpan>("horallegada")
+                    .HasColumnType("time");
 
-                    b.Property<TimeSpan>("horasalida")
-                        .HasColumnType("time");
+                b.Property<TimeSpan>("horasalida")
+                    .HasColumnType("time");
 
-                    b.Property<int>("origenid")
-                        .HasColumnType("int");
+                b.Property<int>("origenid")
+                    .HasColumnType("int");
 
-                    b.HasKey("vueloid");
+                // Nuevas propiedades agregadas
+                b.Property<string>("tipoviaje")
+                    .HasColumnType("nvarchar(50)")
+                    .IsRequired(false);
 
-                    b.HasIndex("aeronaveid");
+                b.Property<string>("clase")
+                    .HasColumnType("nvarchar(50)")
+                    .IsRequired(false);
 
-                    b.HasIndex("destinoid");
+                b.Property<string>("beneficio")
+                    .HasColumnType("nvarchar(100)")
+                    .IsRequired(false);
 
-                    b.HasIndex("origenid");
+                b.Property<decimal>("preciousd")
+                    .HasColumnType("decimal(10,2)")
+                    .IsRequired(false);
 
-                    b.ToTable("vuelos");
-                });
+                b.Property<decimal>("preciopen")
+                    .HasColumnType("decimal(10,2)")
+                    .IsRequired(false);
+
+                b.HasKey("vueloid");
+
+                b.HasIndex("aeronaveid");
+
+                b.HasIndex("destinoid");
+
+                b.HasIndex("origenid");
+
+                b.ToTable("vuelos");
+            });
+
 
             modelBuilder.Entity("xpectrum_api.models.asiento", b =>
                 {

@@ -5,272 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Aeronaves": {
-      "get": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Aeronaves/{id}": {
-      "get": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeronave"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeronave"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Aeronaves/search/{query}": {
-      "get": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "parameters": [
-          {
-            "name": "query",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/aeronave"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Aeronaves/capacity/total": {
-      "get": {
-        "tags": [
-          "Aeronaves"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Aeropuertos": {
+    "/api/Aeropuertos/listar": {
       "get": {
         "tags": [
           "Aeropuertos"
@@ -301,52 +36,6 @@
                   "items": {
                     "$ref": "#/components/schemas/aeropuerto"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Aeropuertos"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeropuerto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeropuerto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/aeropuerto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeropuerto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeropuerto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/aeropuerto"
                 }
               }
             }
@@ -455,6 +144,54 @@
         }
       }
     },
+    "/api/Aeropuertos": {
+      "post": {
+        "tags": [
+          "Aeropuertos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/aeropuerto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/aeropuerto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Aeropuertos/search/{query}": {
       "get": {
         "tags": [
@@ -503,7 +240,7 @@
         }
       }
     },
-    "/api/Asientos": {
+    "/api/Asientos/listar": {
       "get": {
         "tags": [
           "Asientos"
@@ -534,52 +271,6 @@
                   "items": {
                     "$ref": "#/components/schemas/asiento"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Asientos"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/asiento"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/asiento"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/asiento"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/asiento"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/asiento"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/asiento"
                 }
               }
             }
@@ -688,7 +379,55 @@
         }
       }
     },
-    "/api/Boletos": {
+    "/api/Asientos": {
+      "post": {
+        "tags": [
+          "Asientos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/asiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/asiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Boletos/listar": {
       "get": {
         "tags": [
           "Boletos"
@@ -724,7 +463,49 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Boletos/searchbyid/{id}": {
+      "get": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/boleto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Boletos": {
       "post": {
         "tags": [
           "Boletos"
@@ -773,44 +554,6 @@
       }
     },
     "/api/Boletos/{id}": {
-      "get": {
-        "tags": [
-          "Boletos"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/boleto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/boleto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/boleto"
-                }
-              }
-            }
-          }
-        }
-      },
       "put": {
         "tags": [
           "Boletos"
@@ -873,7 +616,136 @@
         }
       }
     },
-    "/api/CheckIns": {
+    "/api/Boletos/buscar": {
+      "get": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "estadoBoleto",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fechaFin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "tamanioPagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Boletos/searchbycodigo/{codigo}": {
+      "get": {
+        "tags": [
+          "Boletos"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/boleto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CheckIns/listar": {
       "get": {
         "tags": [
           "CheckIns"
@@ -904,52 +776,6 @@
                   "items": {
                     "$ref": "#/components/schemas/checkin"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "CheckIns"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/checkin"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/checkin"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/checkin"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/checkin"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/checkin"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/checkin"
                 }
               }
             }
@@ -1058,7 +884,55 @@
         }
       }
     },
-    "/api/ConfiguracionSistema": {
+    "/api/CheckIns": {
+      "post": {
+        "tags": [
+          "CheckIns"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/checkin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/checkin"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ConfiguracionSistema/listar": {
       "get": {
         "tags": [
           "ConfiguracionSistema"
@@ -1089,52 +963,6 @@
                   "items": {
                     "$ref": "#/components/schemas/configuracionsistema"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "ConfiguracionSistema"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/configuracionsistema"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/configuracionsistema"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/configuracionsistema"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/configuracionsistema"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/configuracionsistema"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/configuracionsistema"
                 }
               }
             }
@@ -1243,7 +1071,55 @@
         }
       }
     },
-    "/api/Equipajes": {
+    "/api/ConfiguracionSistema": {
+      "post": {
+        "tags": [
+          "ConfiguracionSistema"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/configuracionsistema"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/configuracionsistema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Equipajes/listar": {
       "get": {
         "tags": [
           "Equipajes"
@@ -1274,52 +1150,6 @@
                   "items": {
                     "$ref": "#/components/schemas/equipaje"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Equipajes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/equipaje"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/equipaje"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/equipaje"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/equipaje"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/equipaje"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/equipaje"
                 }
               }
             }
@@ -1428,7 +1258,55 @@
         }
       }
     },
-    "/api/logaccesoes": {
+    "/api/Equipajes": {
+      "post": {
+        "tags": [
+          "Equipajes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/equipaje"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/equipaje"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/logaccesoes/listar": {
       "get": {
         "tags": [
           "logaccesoes"
@@ -1459,52 +1337,6 @@
                   "items": {
                     "$ref": "#/components/schemas/logacceso"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "logaccesoes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/logacceso"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/logacceso"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/logacceso"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/logacceso"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/logacceso"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/logacceso"
                 }
               }
             }
@@ -1613,7 +1445,55 @@
         }
       }
     },
-    "/api/notificacions": {
+    "/api/logaccesoes": {
+      "post": {
+        "tags": [
+          "logaccesoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/logacceso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/logacceso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notificacions/listar": {
       "get": {
         "tags": [
           "notificacions"
@@ -1644,52 +1524,6 @@
                   "items": {
                     "$ref": "#/components/schemas/notificacion"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "notificacions"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/notificacion"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/notificacion"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/notificacion"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/notificacion"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/notificacion"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/notificacion"
                 }
               }
             }
@@ -1798,7 +1632,55 @@
         }
       }
     },
-    "/api/pagoes": {
+    "/api/notificacions": {
+      "post": {
+        "tags": [
+          "notificacions"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/notificacion"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/notificacion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pagoes/listar": {
       "get": {
         "tags": [
           "pagoes"
@@ -1829,52 +1711,6 @@
                   "items": {
                     "$ref": "#/components/schemas/pago"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "pagoes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/pago"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/pago"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/pago"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/pago"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/pago"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/pago"
                 }
               }
             }
@@ -1983,7 +1819,55 @@
         }
       }
     },
-    "/api/pasajeroreservas": {
+    "/api/pagoes": {
+      "post": {
+        "tags": [
+          "pagoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pago"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pago"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pasajeroreservas/listar": {
       "get": {
         "tags": [
           "pasajeroreservas"
@@ -2014,52 +1898,6 @@
                   "items": {
                     "$ref": "#/components/schemas/pasajeroreserva"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "pasajeroreservas"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/pasajeroreserva"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/pasajeroreserva"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/pasajeroreserva"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/pasajeroreserva"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/pasajeroreserva"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/pasajeroreserva"
                 }
               }
             }
@@ -2168,7 +2006,55 @@
         }
       }
     },
-    "/api/permisoes": {
+    "/api/pasajeroreservas": {
+      "post": {
+        "tags": [
+          "pasajeroreservas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/pasajeroreserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pasajeroreserva"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/permisoes/listar": {
       "get": {
         "tags": [
           "permisoes"
@@ -2199,52 +2085,6 @@
                   "items": {
                     "$ref": "#/components/schemas/permiso"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "permisoes"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/permiso"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/permiso"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/permiso"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/permiso"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/permiso"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/permiso"
                 }
               }
             }
@@ -2350,7 +2190,55 @@
         }
       }
     },
-    "/api/reservas": {
+    "/api/permisoes": {
+      "post": {
+        "tags": [
+          "permisoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/permiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/permiso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reservas/listar": {
       "get": {
         "tags": [
           "reservas"
@@ -2381,52 +2269,6 @@
                   "items": {
                     "$ref": "#/components/schemas/reserva"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "reservas"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/reserva"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/reserva"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/reserva"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/reserva"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/reserva"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/reserva"
                 }
               }
             }
@@ -2535,7 +2377,55 @@
         }
       }
     },
-    "/api/reservaservicios": {
+    "/api/reservas": {
+      "post": {
+        "tags": [
+          "reservas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reserva"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reserva"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reservaservicios/listar": {
       "get": {
         "tags": [
           "reservaservicios"
@@ -2566,52 +2456,6 @@
                   "items": {
                     "$ref": "#/components/schemas/reservaservicio"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "reservaservicios"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/reservaservicio"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/reservaservicio"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/reservaservicio"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/reservaservicio"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/reservaservicio"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/reservaservicio"
                 }
               }
             }
@@ -2720,7 +2564,55 @@
         }
       }
     },
-    "/api/Roles": {
+    "/api/reservaservicios": {
+      "post": {
+        "tags": [
+          "reservaservicios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/reservaservicio"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/reservaservicio"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Roles/listar": {
       "get": {
         "tags": [
           "Roles"
@@ -2751,52 +2643,6 @@
                   "items": {
                     "$ref": "#/components/schemas/rol"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Roles"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/rol"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/rol"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/rol"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/rol"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rol"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rol"
                 }
               }
             }
@@ -2905,7 +2751,55 @@
         }
       }
     },
-    "/api/RolesPermisos": {
+    "/api/Roles": {
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rol"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/RolesPermisos/listar": {
       "get": {
         "tags": [
           "RolesPermisos"
@@ -2936,52 +2830,6 @@
                   "items": {
                     "$ref": "#/components/schemas/rolpermiso"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "RolesPermisos"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/rolpermiso"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/rolpermiso"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/rolpermiso"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/rolpermiso"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rolpermiso"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/rolpermiso"
                 }
               }
             }
@@ -3090,7 +2938,55 @@
         }
       }
     },
-    "/api/ServiciosAdicionales": {
+    "/api/RolesPermisos": {
+      "post": {
+        "tags": [
+          "RolesPermisos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/rolpermiso"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/rolpermiso"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ServiciosAdicionales/listar": {
       "get": {
         "tags": [
           "ServiciosAdicionales"
@@ -3121,52 +3017,6 @@
                   "items": {
                     "$ref": "#/components/schemas/servicioadicional"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "ServiciosAdicionales"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/servicioadicional"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/servicioadicional"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/servicioadicional"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/servicioadicional"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/servicioadicional"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/servicioadicional"
                 }
               }
             }
@@ -3275,7 +3125,55 @@
         }
       }
     },
-    "/api/tickets": {
+    "/api/ServiciosAdicionales": {
+      "post": {
+        "tags": [
+          "ServiciosAdicionales"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/servicioadicional"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/servicioadicional"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tickets/listar": {
       "get": {
         "tags": [
           "tickets"
@@ -3306,52 +3204,6 @@
                   "items": {
                     "$ref": "#/components/schemas/ticket"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "tickets"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ticket"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ticket"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ticket"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ticket"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ticket"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ticket"
                 }
               }
             }
@@ -3460,7 +3312,55 @@
         }
       }
     },
-    "/api/usuariorols": {
+    "/api/tickets": {
+      "post": {
+        "tags": [
+          "tickets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ticket"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ticket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/usuariorols/listar": {
       "get": {
         "tags": [
           "usuariorols"
@@ -3491,52 +3391,6 @@
                   "items": {
                     "$ref": "#/components/schemas/usuariorol"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "usuariorols"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuariorol"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuariorol"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuariorol"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuariorol"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuariorol"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuariorol"
                 }
               }
             }
@@ -3645,7 +3499,55 @@
         }
       }
     },
-    "/api/usuarios": {
+    "/api/usuariorols": {
+      "post": {
+        "tags": [
+          "usuariorols"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuariorol"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuariorol"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/usuarios/listar": {
       "get": {
         "tags": [
           "usuarios"
@@ -3676,52 +3578,6 @@
                   "items": {
                     "$ref": "#/components/schemas/usuario"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "usuarios"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/usuario"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/usuario"
                 }
               }
             }
@@ -3826,6 +3682,723 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/usuarios": {
+      "post": {
+        "tags": [
+          "usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/usuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/listar": {
+      "get": {
+        "tags": [
+          "vueloes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/buscar/{id}": {
+      "get": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/enviar": {
+      "post": {
+        "tags": [
+          "vueloes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/actualizar/{id}": {
+      "put": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vueloes/eliminar/{id}": {
+      "delete": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vueloes/buscar": {
+      "get": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "origenId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "destinoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "fechaSalidaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaSalidaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "estadoVuelo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoVuelo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "tamPagina",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/contar": {
+      "get": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "origenId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "destinoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "fechaSalidaInicio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fechaSalidaFin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "estadoVuelo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoVuelo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/vueloes/buscarPorCodigo/{codigoVuelo}": {
+      "get": {
+        "tags": [
+          "vueloes"
+        ],
+        "parameters": [
+          {
+            "name": "codigoVuelo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Vuelos/GetVuelos": {
+      "get": {
+        "tags": [
+          "Vuelos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vuelos/Vuelosxpasajeros": {
+      "get": {
+        "tags": [
+          "Vuelos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vuelos/listar": {
+      "get": {
+        "tags": [
+          "Vuelos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Vuelos/{id}": {
+      "get": {
+        "tags": [
+          "Vuelos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Vuelos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Vuelos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vuelos": {
+      "post": {
+        "tags": [
+          "Vuelos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/vuelo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/vuelo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Vuelos/search/{query}": {
+      "get": {
+        "tags": [
+          "Vuelos"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/vuelo"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -4164,7 +4737,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "resid": {
+          "reservaid": {
             "type": "integer",
             "format": "int32"
           },
@@ -4255,38 +4828,10 @@
           "vuelo": {
             "$ref": "#/components/schemas/vuelo"
           },
-          "pasajerosReservas": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/pasajeroreserva"
-            },
-            "nullable": true
-          },
           "reservaServicios": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/reservaservicio"
-            },
-            "nullable": true
-          },
-          "pagos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/pago"
-            },
-            "nullable": true
-          },
-          "boletos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/boleto"
-            },
-            "nullable": true
-          },
-          "equipajes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/equipaje"
             },
             "nullable": true
           }
@@ -4300,7 +4845,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "reservaid": {
+          "reservaId": {
             "type": "integer",
             "format": "int32"
           },
@@ -4591,6 +5136,28 @@
           "aeronaveid": {
             "type": "integer",
             "format": "int32"
+          },
+          "tipoviaje": {
+            "type": "string",
+            "nullable": true
+          },
+          "clase": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficio": {
+            "type": "string",
+            "nullable": true
+          },
+          "preciousd": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "preciopen": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           },
           "origen": {
             "$ref": "#/components/schemas/aeropuerto"

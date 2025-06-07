@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/reservaservicios
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<reservaservicio>>> Getreservaservicios()
         {
             var list = new List<reservaservicio>();
@@ -38,7 +38,7 @@ namespace Xpectrum_API.Controllers
                 list.Add(new reservaservicio
                 {
                     reservaservicioid = reader.GetInt32(reader.GetOrdinal("reservaservicioid")),
-                    reservaid = reader.GetInt32(reader.GetOrdinal("reservaid")),
+                    reservaId = reader.GetInt32(reader.GetOrdinal("reservaid")),
                     servicioadicionalid = reader.GetInt32(reader.GetOrdinal("servicioid")),
                     cantidad = reader.GetInt32(reader.GetOrdinal("cantidad")),
                     precio = reader.GetDecimal(reader.GetOrdinal("precio"))
@@ -68,7 +68,7 @@ namespace Xpectrum_API.Controllers
                 item = new reservaservicio
                 {
                     reservaservicioid = reader.GetInt32(reader.GetOrdinal("reservaservicioid")),
-                    reservaid = reader.GetInt32(reader.GetOrdinal("reservaid")),
+                    reservaId = reader.GetInt32(reader.GetOrdinal("reservaid")),
                     servicioadicionalid = reader.GetInt32(reader.GetOrdinal("servicioid")),
                     cantidad = reader.GetInt32(reader.GetOrdinal("cantidad")),
                     precio = reader.GetDecimal(reader.GetOrdinal("precio"))
@@ -94,7 +94,7 @@ namespace Xpectrum_API.Controllers
             command.CommandText = "spInsertarReservaServicio";
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@reservaid", item.reservaid));
+            command.Parameters.Add(new SqlParameter("@reservaid", item.reservaId));
             command.Parameters.Add(new SqlParameter("@servicioid", item.servicioadicionalid));
             command.Parameters.Add(new SqlParameter("@cantidad", item.cantidad));
             command.Parameters.Add(new SqlParameter("@precio", item.precio));
@@ -126,7 +126,7 @@ namespace Xpectrum_API.Controllers
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.Add(new SqlParameter("@reservaservicioid", item.reservaservicioid));
-            command.Parameters.Add(new SqlParameter("@reservaid", item.reservaid));
+            command.Parameters.Add(new SqlParameter("@reservaid", item.reservaId));
             command.Parameters.Add(new SqlParameter("@servicioid", item.servicioadicionalid));
             command.Parameters.Add(new SqlParameter("@cantidad", item.cantidad));
             command.Parameters.Add(new SqlParameter("@precio", item.precio));

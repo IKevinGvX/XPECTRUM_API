@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/permisoes
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<permiso>>> Getpermisos()
         {
             return await _context.permisos.ToListAsync();

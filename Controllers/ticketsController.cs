@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/tickets
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<ticket>>> Gettickets()
         {
             return await _context.tickets.ToListAsync();

@@ -1,180 +1,5 @@
 [
   {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "GetAeronaves",
-    "RelativePath": "api/Aeronaves",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.aeronave, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "PostAeronave",
-    "RelativePath": "api/Aeronaves",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "aeronave",
-        "Type": "xpectrum_api.models.aeronave",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.aeronave",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "GetAeronave",
-    "RelativePath": "api/Aeronaves/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.aeronave",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "PutAeronave",
-    "RelativePath": "api/Aeronaves/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "aeronave",
-        "Type": "xpectrum_api.models.aeronave",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "DeleteAeronave",
-    "RelativePath": "api/Aeronaves/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "GetCapacidadTotal",
-    "RelativePath": "api/Aeronaves/capacity/total",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeronavesController",
-    "Method": "SearchAeronaves",
-    "RelativePath": "api/Aeronaves/search/{query}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "query",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.aeronave, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AeropuertosController",
-    "Method": "GetAeropuertos",
-    "RelativePath": "api/Aeropuertos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.aeropuerto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Xpectrum_API.Controllers.AeropuertosController",
     "Method": "PostAeropuerto",
     "RelativePath": "api/Aeropuertos",
@@ -265,6 +90,26 @@
   },
   {
     "ContainingType": "Xpectrum_API.Controllers.AeropuertosController",
+    "Method": "GetAeropuertos",
+    "RelativePath": "api/Aeropuertos/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.aeropuerto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.AeropuertosController",
     "Method": "SearchAeropuertos",
     "RelativePath": "api/Aeropuertos/search/{query}",
     "HttpMethod": "GET",
@@ -280,26 +125,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.aeropuerto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.AsientosController",
-    "Method": "GetAsientos",
-    "RelativePath": "api/Asientos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.asiento, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -399,16 +224,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
-    "Method": "GetBoletos",
-    "RelativePath": "api/Boletos",
+    "ContainingType": "Xpectrum_API.Controllers.AsientosController",
+    "Method": "GetAsientos",
+    "RelativePath": "api/Asientos/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.boleto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.asiento, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -429,32 +254,6 @@
       {
         "Name": "boleto",
         "Type": "xpectrum_api.models.boleto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.boleto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
-    "Method": "GetBoleto",
-    "RelativePath": "api/Boletos/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -508,16 +307,114 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.CheckInsController",
-    "Method": "GetCheckIns",
-    "RelativePath": "api/CheckIns",
+    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
+    "Method": "BuscarBoletosAvanzado",
+    "RelativePath": "api/Boletos/buscar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estadoBoleto",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaInicio",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaFin",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tamanioPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.boleto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
+    "Method": "GetBoletos",
+    "RelativePath": "api/Boletos/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.checkin, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.boleto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
+    "Method": "SearchByCodigo",
+    "RelativePath": "api/Boletos/searchbycodigo/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.boleto, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.BoletosController",
+    "Method": "SearchById",
+    "RelativePath": "api/Boletos/searchbyid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.boleto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -617,16 +514,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.ConfiguracionSistemaController",
-    "Method": "GetConfiguraciones",
-    "RelativePath": "api/ConfiguracionSistema",
+    "ContainingType": "Xpectrum_API.Controllers.CheckInsController",
+    "Method": "GetCheckIns",
+    "RelativePath": "api/CheckIns/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.configuracionsistema, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.checkin, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -726,16 +623,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.EquipajesController",
-    "Method": "GetEquipajes",
-    "RelativePath": "api/Equipajes",
+    "ContainingType": "Xpectrum_API.Controllers.ConfiguracionSistemaController",
+    "Method": "GetConfiguraciones",
+    "RelativePath": "api/ConfiguracionSistema/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.equipaje, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.configuracionsistema, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -835,16 +732,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.logaccesoesController",
-    "Method": "Getlogsaccesos",
-    "RelativePath": "api/logaccesoes",
+    "ContainingType": "Xpectrum_API.Controllers.EquipajesController",
+    "Method": "GetEquipajes",
+    "RelativePath": "api/Equipajes/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.logacceso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.equipaje, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -944,16 +841,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.notificacionsController",
-    "Method": "Getnotificaciones",
-    "RelativePath": "api/notificacions",
+    "ContainingType": "Xpectrum_API.Controllers.logaccesoesController",
+    "Method": "Getlogsaccesos",
+    "RelativePath": "api/logaccesoes/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.notificacion, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.logacceso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1053,16 +950,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.pagoesController",
-    "Method": "Getpagos",
-    "RelativePath": "api/pagoes",
+    "ContainingType": "Xpectrum_API.Controllers.notificacionsController",
+    "Method": "Getnotificaciones",
+    "RelativePath": "api/notificacions/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.pago, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.notificacion, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1162,16 +1059,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.pasajeroreservasController",
-    "Method": "Getpasajerosreservas",
-    "RelativePath": "api/pasajeroreservas",
+    "ContainingType": "Xpectrum_API.Controllers.pagoesController",
+    "Method": "Getpagos",
+    "RelativePath": "api/pagoes/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.pasajeroreserva, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.pago, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1271,16 +1168,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.permisoesController",
-    "Method": "Getpermisos",
-    "RelativePath": "api/permisoes",
+    "ContainingType": "Xpectrum_API.Controllers.pasajeroreservasController",
+    "Method": "Getpasajerosreservas",
+    "RelativePath": "api/pasajeroreservas/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.permiso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.pasajeroreserva, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1380,16 +1277,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.reservasController",
-    "Method": "Getreservas",
-    "RelativePath": "api/reservas",
+    "ContainingType": "Xpectrum_API.Controllers.permisoesController",
+    "Method": "Getpermisos",
+    "RelativePath": "api/permisoes/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.reserva, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.permiso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1489,16 +1386,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.reservaserviciosController",
-    "Method": "Getreservaservicios",
-    "RelativePath": "api/reservaservicios",
+    "ContainingType": "Xpectrum_API.Controllers.reservasController",
+    "Method": "Getreservas",
+    "RelativePath": "api/reservas/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.reservaservicio, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.reserva, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1598,16 +1495,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.RolesController",
-    "Method": "GetRoles",
-    "RelativePath": "api/Roles",
+    "ContainingType": "Xpectrum_API.Controllers.reservaserviciosController",
+    "Method": "Getreservaservicios",
+    "RelativePath": "api/reservaservicios/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.rol, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.reservaservicio, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1707,16 +1604,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.RolesPermisosController",
-    "Method": "GetRolesPermisos",
-    "RelativePath": "api/RolesPermisos",
+    "ContainingType": "Xpectrum_API.Controllers.RolesController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Roles/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.rolpermiso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.rol, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1816,16 +1713,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.ServiciosAdicionalesController",
-    "Method": "GetServiciosAdicionales",
-    "RelativePath": "api/ServiciosAdicionales",
+    "ContainingType": "Xpectrum_API.Controllers.RolesPermisosController",
+    "Method": "GetRolesPermisos",
+    "RelativePath": "api/RolesPermisos/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.servicioadicional, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.rolpermiso, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1925,16 +1822,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.ticketsController",
-    "Method": "Gettickets",
-    "RelativePath": "api/tickets",
+    "ContainingType": "Xpectrum_API.Controllers.ServiciosAdicionalesController",
+    "Method": "GetServiciosAdicionales",
+    "RelativePath": "api/ServiciosAdicionales/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.ticket, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.servicioadicional, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2034,16 +1931,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.usuariorolsController",
-    "Method": "Getusuariosroles",
-    "RelativePath": "api/usuariorols",
+    "ContainingType": "Xpectrum_API.Controllers.ticketsController",
+    "Method": "Gettickets",
+    "RelativePath": "api/tickets/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.usuariorol, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.ticket, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2143,16 +2040,16 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.usuariosController",
-    "Method": "Getusuarios",
-    "RelativePath": "api/usuarios",
+    "ContainingType": "Xpectrum_API.Controllers.usuariorolsController",
+    "Method": "Getusuariosroles",
+    "RelativePath": "api/usuariorols/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.usuario, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.usuariorol, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2249,6 +2146,428 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.usuariosController",
+    "Method": "Getusuarios",
+    "RelativePath": "api/usuarios/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.usuario, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "Putvuelo",
+    "RelativePath": "api/vueloes/actualizar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vuelo",
+        "Type": "xpectrum_api.models.vuelo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "BuscarVuelos",
+    "RelativePath": "api/vueloes/buscar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "origenId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "destinoId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaSalidaInicio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaSalidaFin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "estadoVuelo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoVuelo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tamPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "Getvuelo",
+    "RelativePath": "api/vueloes/buscar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.vuelo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "GetVueloPorCodigo",
+    "RelativePath": "api/vueloes/buscarPorCodigo/{codigoVuelo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoVuelo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.vuelo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "ContarVuelos",
+    "RelativePath": "api/vueloes/contar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "origenId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "destinoId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaSalidaInicio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fechaSalidaFin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "estadoVuelo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoVuelo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "Deletevuelo",
+    "RelativePath": "api/vueloes/eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "Postvuelo",
+    "RelativePath": "api/vueloes/enviar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vuelo",
+        "Type": "xpectrum_api.models.vuelo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.vuelo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
+    "Method": "Getvuelos",
+    "RelativePath": "api/vueloes/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "PostVuelo",
+    "RelativePath": "api/Vuelos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vuelo",
+        "Type": "xpectrum_api.models.vuelo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.vuelo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "GetVuelo",
+    "RelativePath": "api/Vuelos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "xpectrum_api.models.vuelo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "PutVuelo",
+    "RelativePath": "api/Vuelos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vuelo",
+        "Type": "xpectrum_api.models.vuelo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "DeleteVuelo",
+    "RelativePath": "api/Vuelos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "XpectrumAPI.Controllers.VuelosController",
+    "Method": "GetVuelos",
+    "RelativePath": "api/Vuelos/GetVuelos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "GetVuelos",
+    "RelativePath": "api/Vuelos/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Xpectrum_API.Controllers.VuelosController",
+    "Method": "SearchVuelos",
+    "RelativePath": "api/Vuelos/search/{query}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "XpectrumAPI.Controllers.VuelosController",
+    "Method": "GetVuelosPasajeros",
+    "RelativePath": "api/Vuelos/Vuelosxpasajeros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

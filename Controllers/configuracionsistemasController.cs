@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/configuracionsistema
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<configuracionsistema>>> GetConfiguraciones()
         {
             var result = new List<configuracionsistema>();

@@ -10,136 +10,118 @@ namespace Xpectrum_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AeronavesController : ControllerBase
+    public class VuelosController : ControllerBase
     {
         private readonly xpectrumContext _context;
 
-        public AeronavesController(xpectrumContext context)
+        public VuelosController(xpectrumContext context)
         {
             _context = context;
         }
 
-        // GET: api/Aeronaves
-        // Procedimiento almacenado: spObtenerAeronaves
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<aeronave>>> GetAeronaves()
+        // GET: api/Vuelos/listar
+        [HttpGet("listar")]
+        public async Task<ActionResult<IEnumerable<vuelo>>> GetVuelos()
         {
-            var aeronaves = await _context.aeronaves
-                .FromSqlRaw("EXEC spObtenerAeronaves")
+            var vuelos = await _context.vuelos
+                .FromSqlRaw("EXEC spObtenerVuelos")
                 .ToListAsync();
-            return Ok(aeronaves);
+            return Ok(vuelos);
         }
 
-        // GET: api/Aeronaves/5
-        // Procedimiento almacenado: spObtenerAeronavePorId
+        // GET: api/Vuelos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<aeronave>> GetAeronave(int id)
+        public async Task<ActionResult<vuelo>> GetVuelo(int id)
         {
-            var param = new SqlParameter("@aeronaveId", id);
-            var aeronave = await _context.aeronaves
-                .FromSqlRaw("EXEC spObtenerAeronavePorId @aeronaveId", param)
+            var param = new SqlParameter("@vueloId", id);
+            var vuelo = await _context.vuelos
+                .FromSqlRaw("EXEC spObtenerVueloPorId @vueloId", param)
                 .FirstOrDefaultAsync();
 
-            if (aeronave == null)
+            if (vuelo == null)
                 return NotFound();
 
-            return Ok(aeronave);
+            return Ok(vuelo);
         }
 
-        // POST: api/Aeronaves
-        // Procedimiento almacenado: spInsertarAeronave
+        // POST: api/Vuelos
         [HttpPost]
-        public async Task<ActionResult<aeronave>> PostAeronave(aeronave aeronave)
+        public async Task<ActionResult<vuelo>> PostVuelo(vuelo vuelo)
         {
             var parameters = new[]
             {
-                new SqlParameter("@modelo", aeronave.modelo),
-                new SqlParameter("@capacidad", aeronave.capacidad),
-                new SqlParameter("@matricula", aeronave.matricula),
+                new SqlParameter("@codigoVuelo", vuelo.codigovuelo),
+                new SqlParameter("@origenId", vuelo.origenid),
+                new SqlParameter("@destinoId", vuelo.destinoid),
+                new SqlParameter("@fechaSalida", vuelo.fechasalida),
+                new SqlParameter("@horaSalida", vuelo.horasalida),
+                new SqlParameter("@fechaLlegada", vuelo.fechallegada),
+                new SqlParameter("@horaLlegada", vuelo.horallegada),
+                new SqlParameter("@estadoVuelo", vuelo.estadovuelo),
+                new SqlParameter("@aeronaveId", vuelo.aeronaveid),
+                new SqlParameter("@tipoViaje", vuelo.tipoviaje ?? (object)DBNull.Value),
+                new SqlParameter("@clase", vuelo.clase ?? (object)DBNull.Value),
+                new SqlParameter("@beneficio", vuelo.beneficio ?? (object)DBNull.Value),
+                new SqlParameter("@precioUSD", vuelo.preciousd ?? (object)DBNull.Value),
+                new SqlParameter("@precioPEN", vuelo.preciopen ?? (object)DBNull.Value),
             };
 
-            await _context.Database.ExecuteSqlRawAsync("EXEC spInsertarAeronave @modelo, @capacidad, @matricula", parameters);
+            await _context.Database.ExecuteSqlRawAsync("EXEC spInsertarVuelo @codigoVuelo, @origenId, @destinoId, @fechaSalida, @horaSalida, @fechaLlegada, @horaLlegada, @estadoVuelo, @aeronaveId, @tipoViaje, @clase, @beneficio, @precioUSD, @precioPEN", parameters);
 
-            // Nota: Para obtener el id recién insertado se puede modificar el SP para devolverlo y capturarlo aquí.
+            // Aquí idealmente modificar el SP para devolver el nuevo ID y capturarlo
 
-            return CreatedAtAction(nameof(GetAeronave), new { id = aeronave.aeronaveid }, aeronave);
+            return CreatedAtAction(nameof(GetVuelo), new { id = vuelo.vueloid }, vuelo);
         }
 
-        // PUT: api/Aeronaves/5
-        // Procedimiento almacenado: spActualizarAeronave
+        // PUT: api/Vuelos/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAeronave(int id, aeronave aeronave)
+        public async Task<IActionResult> PutVuelo(int id, vuelo vuelo)
         {
-            if (id != aeronave.aeronaveid)
+            if (id != vuelo.vueloid)
                 return BadRequest();
 
             var parameters = new[]
             {
-                new SqlParameter("@aeronaveId", aeronave.aeronaveid),
-                new SqlParameter("@modelo", aeronave.modelo),
-                new SqlParameter("@capacidad", aeronave.capacidad),
-                new SqlParameter("@matricula", aeronave.matricula),
+                new SqlParameter("@vueloId", vuelo.vueloid),
+                new SqlParameter("@codigoVuelo", vuelo.codigovuelo),
+                new SqlParameter("@origenId", vuelo.origenid),
+                new SqlParameter("@destinoId", vuelo.destinoid),
+                new SqlParameter("@fechaSalida", vuelo.fechasalida),
+                new SqlParameter("@horaSalida", vuelo.horasalida),
+                new SqlParameter("@fechaLlegada", vuelo.fechallegada),
+                new SqlParameter("@horaLlegada", vuelo.horallegada),
+                new SqlParameter("@estadoVuelo", vuelo.estadovuelo),
+                new SqlParameter("@aeronaveId", vuelo.aeronaveid),
+                new SqlParameter("@tipoViaje", vuelo.tipoviaje ?? (object)DBNull.Value),
+                new SqlParameter("@clase", vuelo.clase ?? (object)DBNull.Value),
+                new SqlParameter("@beneficio", vuelo.beneficio ?? (object)DBNull.Value),
+                new SqlParameter("@precioUSD", vuelo.preciousd ?? (object)DBNull.Value),
+                new SqlParameter("@precioPEN", vuelo.preciopen ?? (object)DBNull.Value),
             };
 
-            await _context.Database.ExecuteSqlRawAsync("EXEC spActualizarAeronave @aeronaveId, @modelo, @capacidad, @matricula", parameters);
+            await _context.Database.ExecuteSqlRawAsync("EXEC spActualizarVuelo @vueloId, @codigoVuelo, @origenId, @destinoId, @fechaSalida, @horaSalida, @fechaLlegada, @horaLlegada, @estadoVuelo, @aeronaveId, @tipoViaje, @clase, @beneficio, @precioUSD, @precioPEN", parameters);
 
             return NoContent();
         }
 
-        // DELETE: api/Aeronaves/5
-        // Procedimiento almacenado: spEliminarAeronave
+        // DELETE: api/Vuelos/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAeronave(int id)
+        public async Task<IActionResult> DeleteVuelo(int id)
         {
-            var param = new SqlParameter("@aeronaveId", id);
-            await _context.Database.ExecuteSqlRawAsync("EXEC spEliminarAeronave @aeronaveId", param);
+            var param = new SqlParameter("@vueloId", id);
+            await _context.Database.ExecuteSqlRawAsync("EXEC spEliminarVuelo @vueloId", param);
             return NoContent();
         }
 
-        // GET: api/Aeronaves/search/{query}
-        // Procedimiento almacenado: spBuscarAeronaves
+        // GET: api/Vuelos/search/{query}
         [HttpGet("search/{query}")]
-        public async Task<ActionResult<IEnumerable<aeronave>>> SearchAeronaves(string query)
+        public async Task<ActionResult<IEnumerable<vuelo>>> SearchVuelos(string query)
         {
             var param = new SqlParameter("@textoBusqueda", query);
-            var result = await _context.aeronaves
-                .FromSqlRaw("EXEC spBuscarAeronaves @textoBusqueda", param)
+            var result = await _context.vuelos
+                .FromSqlRaw("EXEC spBuscarVuelos @textoBusqueda", param)
                 .ToListAsync();
             return Ok(result);
         }
-        // GET: api/Aeronaves/capacity/total
-        // Procedimiento almacenado: spObtenerCapacidadTotal
-        [HttpGet("capacity/total")]
-        public async Task<ActionResult<int>> GetCapacidadTotal()
-        {
-            int capacidadTotal = 0;
-
-            // Abrir la conexión
-            await _context.Database.OpenConnectionAsync();
-
-            try
-            {
-                using (var command = _context.Database.GetDbConnection().CreateCommand())
-                {
-                    command.CommandText = "spObtenerCapacidadTotal";
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-
-                    var result = await command.ExecuteScalarAsync();
-
-                    if (result != null && int.TryParse(result.ToString(), out int valor))
-                    {
-                        capacidadTotal = valor;
-                    }
-                }
-            }
-            finally
-            {
-                // Cerrar la conexión
-                await _context.Database.CloseConnectionAsync();
-            }
-
-            return Ok(capacidadTotal);
-        }
-
     }
 }

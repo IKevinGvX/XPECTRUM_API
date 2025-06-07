@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
 
         // GET: api/aeropuertos
         // Procedimiento almacenado: spObtenerAeropuertos
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<aeropuerto>>> GetAeropuertos()
         {
             var aeropuertos = await _context.aeropuertos

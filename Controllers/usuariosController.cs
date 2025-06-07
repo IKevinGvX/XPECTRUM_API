@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/usuarios
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<usuario>>> Getusuarios()
         {
             return await _context.usuarios.ToListAsync();

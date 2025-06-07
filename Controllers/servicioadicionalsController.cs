@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/ServiciosAdicionales
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<servicioadicional>>> GetServiciosAdicionales()
         {
             var list = new List<servicioadicional>();

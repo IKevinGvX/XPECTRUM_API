@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/usuariorols
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<usuariorol>>> Getusuariosroles()
         {
             return await _context.usuariosroles.ToListAsync();

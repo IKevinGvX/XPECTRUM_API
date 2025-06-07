@@ -23,7 +23,7 @@ namespace Xpectrum_API.Controllers
 
         // GET: api/checkins
         // Procedimiento almacenado: spObtenerCheckIns
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<checkin>>> GetCheckIns()
         {
             var result = new List<checkin>();

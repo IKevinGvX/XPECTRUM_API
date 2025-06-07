@@ -285,5 +285,6 @@ C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\runtime
 C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\obj\Debug\net8.0\Xpectrum_API.sourcelink.json
 C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\appsetting.production.json
+C:\Users\PC - OS\source\repos\Xpectrum_API\Xpectrum_API\bin\Debug\net8.0\Dapper.dll

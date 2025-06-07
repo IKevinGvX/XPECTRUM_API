@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/roles
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<rol>>> GetRoles()
         {
             var roles = new List<rol>();

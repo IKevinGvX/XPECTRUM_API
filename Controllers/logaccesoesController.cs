@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/logaccesoes
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<logacceso>>> Getlogsaccesos()
         {
             return await _context.logsaccesos.ToListAsync();

@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/reservas
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<reserva>>> Getreservas()
         {
             var reservas = new List<reserva>();

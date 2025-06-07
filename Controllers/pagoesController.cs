@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/pagoes
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<pago>>> Getpagos()
         {
             return await _context.pagos.ToListAsync();

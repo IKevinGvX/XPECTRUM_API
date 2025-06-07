@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/pasajeroreservas
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<pasajeroreserva>>> Getpasajerosreservas()
         {
             return await _context.pasajerosreservas.ToListAsync();

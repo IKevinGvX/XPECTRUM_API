@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using xpectrum_api.models;
-
 namespace xpectrum_api.data
 {
     public class xpectrumContext : DbContext
@@ -53,36 +52,45 @@ namespace xpectrum_api.data
             modelBuilder.Entity<rol>().HasKey(r => r.rolid);
             modelBuilder.Entity<rolpermiso>().HasKey(rp => rp.rolpermisoid);
             modelBuilder.Entity<usuariorol>().HasKey(ur => ur.usuariorolid);
-
-            // Relaciones
+  
+        {
+            // Relación entre 'reserva' y 'usuario'
             modelBuilder.Entity<reserva>()
-                .HasOne(r => r.Usuario)
-                .WithMany(u => u.reservas)
-                .HasForeignKey(r => r.usuarioId);
+                .HasOne(r => r.Usuario)            // Un usuario tiene muchas reservas
+                .WithMany(u => u.reservas)         // Un usuario puede tener varias reservas
+                .HasForeignKey(r => r.usuarioId);  // Clave foránea en 'reserva' que apunta a 'usuario'
 
+            // Relación entre 'reserva' y 'vuelo'
             modelBuilder.Entity<reserva>()
-                .HasOne(r => r.Vuelo)
-                .WithMany(v => v.reservas)
-                .HasForeignKey(r => r.vueloId);
+                .HasOne(r => r.Vuelo)              // Una reserva está asociada a un vuelo
+                .WithMany(v => v.reservas)         // Un vuelo puede tener muchas reservas
+                .HasForeignKey(r => r.vueloId);    // Clave foránea en 'reserva' que apunta a 'vuelo'
 
+            // Relación entre 'vuelo' y 'aeropuerto' (Origen)
             modelBuilder.Entity<vuelo>()
-                .HasOne(v => v.origen)
-                .WithMany(a => a.vuelosorigen)
-                .HasForeignKey(v => v.origenid)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(v => v.origen)             // Un vuelo tiene un aeropuerto de origen
+                .WithMany(a => a.vuelosorigen)     // Un aeropuerto puede ser origen de muchos vuelos
+                .HasForeignKey(v => v.origenid)    // Clave foránea en 'vuelo' que apunta a 'aeropuerto' (origen)
+                .OnDelete(DeleteBehavior.Restrict); // No eliminar vuelos si se elimina un aeropuerto de origen
 
+            // Relación entre 'vuelo' y 'aeropuerto' (Destino)
             modelBuilder.Entity<vuelo>()
-                .HasOne(v => v.destino)
-                .WithMany(a => a.vuelosdestino)
-                .HasForeignKey(v => v.destinoid)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasOne(v => v.destino)            // Un vuelo tiene un aeropuerto de destino
+                .WithMany(a => a.vuelosdestino)    // Un aeropuerto puede ser destino de muchos vuelos
+                .HasForeignKey(v => v.destinoid)   // Clave foránea en 'vuelo' que apunta a 'aeropuerto' (destino)
+                .OnDelete(DeleteBehavior.Restrict); // No eliminar vuelos si se elimina un aeropuerto de destino
 
+            // Relación entre 'vuelo' y 'aeronave'
             modelBuilder.Entity<vuelo>()
-                .HasOne(v => v.aeronave)
-                .WithMany(a => a.vuelos)
-                .HasForeignKey(v => v.aeronaveid);
+                .HasOne(v => v.aeronave)           // Un vuelo tiene una aeronave
+                .WithMany(a => a.vuelos)           // Una aeronave puede ser utilizada en muchos vuelos
+                .HasForeignKey(v => v.aeronaveid); // Clave foránea en 'vuelo' que apunta a 'aeronave'
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
+
+}
+
 }

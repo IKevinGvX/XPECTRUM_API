@@ -7,6 +7,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<xpectrumContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("XpectrumDB")));
 
+// Configurar política CORS (puedes cambiar AllowAnyOrigin por dominios específicos)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTodo", builder =>
+    {
+        builder
+            .AllowAnyOrigin()    // Permite cualquier origen (para desarrollo)
+            .AllowAnyMethod()    // Permite todos los métodos HTTP (GET, POST, etc)
+            .AllowAnyHeader();   // Permite todas las cabeceras
+    });
+});
+
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -24,6 +36,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Habilitar CORS antes de MapControllers
+app.UseCors("PermitirTodo");
 
 app.UseAuthorization();
 

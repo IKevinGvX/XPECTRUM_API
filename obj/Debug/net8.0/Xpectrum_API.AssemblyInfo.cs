@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xpectrum_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a3efa93376230c23ba43d858833c23698d86cc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xpectrum_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xpectrum_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

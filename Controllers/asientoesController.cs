@@ -21,7 +21,7 @@ namespace Xpectrum_API.Controllers
 
         // GET: api/asientos
         // Procedimiento almacenado: spObtenerAsientos
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<asiento>>> GetAsientos()
         {
             var asientos = await _context.asientos

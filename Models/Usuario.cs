@@ -1,4 +1,4 @@
-﻿namespace xpectrum_api.models
+﻿ namespace xpectrum_api.models
 {
     using System;
     using System.Collections.Generic;
@@ -46,52 +46,50 @@
 
     public class vuelo
     {
+        internal object horaSalida;
+
         public int vueloid { get; set; }
-        public string codigovuelo { get; set; }
+        public string codigovuelo { get; set; } = null!;  // No null según la BD
         public int origenid { get; set; }
         public int destinoid { get; set; }
         public DateTime fechasalida { get; set; }
         public TimeSpan horasalida { get; set; }
         public DateTime fechallegada { get; set; }
         public TimeSpan horallegada { get; set; }
-        public string estadovuelo { get; set; }
+        public string estadovuelo { get; set; } = null!;  // No null según la BD
         public int aeronaveid { get; set; }
 
-        public aeropuerto origen { get; set; }
-        public aeropuerto destino { get; set; }
-        public aeronave aeronave { get; set; }
+        // Nuevas propiedades, nullable porque son NULL en BD
+        public string? tipoviaje { get; set; }
+        public string? clase { get; set; }
+        public string? beneficio { get; set; }
+        public decimal? preciousd { get; set; }
+        public decimal? preciopen { get; set; }
 
-        public ICollection<reserva> reservas { get; set; }
-        public ICollection<asiento> asientos { get; set; }
+        // Relaciones (pueden ser null o no según tu diseño)
+        public aeropuerto? origen { get; set; }
+        public aeropuerto? destino { get; set; }
+        public aeronave? aeronave { get; set; }
+
+        public ICollection<reserva>? reservas { get; set; }
+        public ICollection<asiento>? asientos { get; set; }
     }
 
     public class reserva
     {
         public int reservaId { get; set; }
-        public int usuarioId { get; set; }            // Foreign key al usuario que hizo la reserva
-        public int vueloId { get; set; }              // Foreign key al vuelo reservado
-        public DateTime fechaReserva { get; set; }   // Fecha en que se hizo la reserva
-        public string estadoReserva { get; set; }    // Estado actual de la reserva (ejemplo: Confirmada, Cancelada, Pendiente)
-        public decimal totalPago { get; set; }       // Monto total pagado en la reserva
+        public int usuarioId { get; set; }            // Foreign key al usuario
+        public int vueloId { get; set; }              // Foreign key al vuelo
+        public DateTime fechaReserva { get; set; }
+        public string estadoReserva { get; set; }
+        public decimal totalPago { get; set; }
 
         // Relaciones de navegación
-        public usuario Usuario { get; set; }                             // Usuario que realizó la reserva
-        public vuelo Vuelo { get; set; }                                 // Vuelo reservado
-        public ICollection<pasajeroreserva> PasajerosReservas { get; set; }  // Lista de pasajeros asociados a esta reserva
-        public ICollection<reservaservicio> ReservaServicios { get; set; }   // Servicios adicionales asociados a esta reserva
-        public ICollection<pago> Pagos { get; set; }                       // Pagos realizados para esta reserva
-        public ICollection<boleto> Boletos { get; set; }                   // Boletos generados para esta reserva
-        public ICollection<equipaje> Equipajes { get; set; }               // Equipajes relacionados con esta reserva
-
-        public reserva()
-        {
-            PasajerosReservas = new HashSet<pasajeroreserva>();
-            ReservaServicios = new HashSet<reservaservicio>();
-            Pagos = new HashSet<pago>();
-            Boletos = new HashSet<boleto>();
-            Equipajes = new HashSet<equipaje>();
-        }
+        public usuario Usuario { get; set; }          // Relación con 'usuario'
+        public vuelo Vuelo { get; set; }              // Relación con 'vuelo'
+        public ICollection<reservaservicio> ReservaServicios { get; set; }  // Relación con 'reservaservicio'
     }
+
 
     public class asiento
     {
@@ -108,7 +106,7 @@
     public class pasajeroreserva
     {
         public int pasajeroreservaid { get; set; }
-        public int resid { get; set; }
+        public int reservaid { get; set; }
         public string nombre { get; set; }
         public string documentotipo { get; set; }
         public string documentonumero { get; set; }
@@ -130,17 +128,16 @@
     }
     public class reservaservicio
     {
-        public int reservaservicioid { get; set; }
-        public int reservaid { get; set; }                     // FK a reserva
-        public int servicioadicionalid { get; set; }      // FK a servicio adicional
+        public int reservaservicioid { get; set; } // Clave primaria
+        public int reservaId { get; set; }         // Clave foránea a 'reserva'
+        public int servicioadicionalid { get; set; } // Clave foránea a 'servicioadicional'
         public int cantidad { get; set; }
-        public decimal precio { get; set; }                // Nuevo campo precio
+        public decimal precio { get; set; }
 
         // Relaciones de navegación
-        public reserva Reserva { get; set; }
-        public servicioadicional ServicioAdicional { get; set; }
+        public reserva Reserva { get; set; }              // Relación con 'reserva'
+        public servicioadicional ServicioAdicional { get; set; } // Relación con 'servicioadicional'
     }
-
 
     public class pago
     {
@@ -260,7 +257,7 @@
         public string permisocodigo { get; set; }
 
         public rol rol { get; set; }
-        public permiso permiso { get; set; }
+          public permiso permiso { get; set; }
     }
 
     public class usuariorol
@@ -272,4 +269,5 @@
         public usuario usuario { get; set; }
         public rol rol { get; set; }
     }
+ 
 }

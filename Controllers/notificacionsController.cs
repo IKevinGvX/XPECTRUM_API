@@ -22,7 +22,7 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/notificacions
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<notificacion>>> Getnotificaciones()
         {
             return await _context.notificaciones.ToListAsync();

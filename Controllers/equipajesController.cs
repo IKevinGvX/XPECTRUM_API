@@ -23,7 +23,7 @@ namespace Xpectrum_API.Controllers
 
         // GET: api/equipajes
         // Procedimiento almacenado: spObtenerEquipajes
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<equipaje>>> GetEquipajes()
         {
             var result = new List<equipaje>();

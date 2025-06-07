@@ -20,7 +20,7 @@ namespace Xpectrum_API.Controllers
 
         // GET: api/boletos
         // Usa el procedimiento almacenado spObtenerBoletos
-        [HttpGet]
+        [HttpGet("listar")]
         public async Task<ActionResult<IEnumerable<boleto>>> GetBoletos()
         {
             var boletos = await _context.boletos
@@ -30,20 +30,26 @@ namespace Xpectrum_API.Controllers
         }
 
         // GET: api/boletos/5
-        // Usa el procedimiento almacenado spObtenerBoletoPorId
-        [HttpGet("{id}")]
-        public async Task<ActionResult<boleto>> GetBoleto(int id)
+        // GET: api/boletos/searchbyid/5
+        [HttpGet("searchbyid/{id}")]
+        public async Task<ActionResult<boleto>> SearchById(int id)
         {
             var param = new SqlParameter("@boletoId", id);
-            var boleto = await _context.boletos
+
+            // Ejecuta el procedimiento y trae los resultados a memoria con ToListAsync()
+            var boletos = await _context.boletos
                 .FromSqlRaw("EXEC spObtenerBoletoPorId @boletoId", param)
-                .FirstOrDefaultAsync();
+                .ToListAsync();
+
+            // Ahora seleccionamos el primero (o null)
+            var boleto = boletos.FirstOrDefault();
 
             if (boleto == null)
                 return NotFound();
 
             return Ok(boleto);
         }
+
 
         // POST: api/boletos
         // Usa el procedimiento almacenado spInsertarBoleto
@@ -64,7 +70,7 @@ namespace Xpectrum_API.Controllers
 
             // Opcional: Si el SP retorna el nuevo id, capturarlo y asignar aquí para devolver CreatedAtAction correcto.
 
-            return CreatedAtAction(nameof(GetBoleto), new { id = boleto.boletoid }, boleto);
+            return CreatedAtAction(nameof(GetBoletos), new { id = boleto.boletoid }, boleto);
         }
 
         // PUT: api/boletos/5
@@ -100,5 +106,57 @@ namespace Xpectrum_API.Controllers
             await _context.Database.ExecuteSqlRawAsync("EXEC spEliminarBoleto @boletoId", param);
             return NoContent();
         }
+        // GET: api/boletos/buscar
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<boleto>>> BuscarBoletosAvanzado(
+            [FromQuery] string? estadoBoleto = null,
+            [FromQuery] DateTime? fechaInicio = null,
+            [FromQuery] DateTime? fechaFin = null,
+            [FromQuery] int pagina = 1,
+            [FromQuery] int tamanioPagina = 10)
+        {
+            var parameters = new[]
+            {
+        new SqlParameter("@estadoBoleto", estadoBoleto ?? (object)DBNull.Value),
+        new SqlParameter("@fechaInicio", fechaInicio ?? (object)DBNull.Value),
+        new SqlParameter("@fechaFin", fechaFin ?? (object)DBNull.Value),
+        new SqlParameter("@pagina", pagina),
+        new SqlParameter("@tamanioPagina", tamanioPagina)
+    };
+
+            var boletos = await _context.boletos
+                .FromSqlRaw("EXEC spBuscarBoletosAvanzado @estadoBoleto, @fechaInicio, @fechaFin, @pagina, @tamanioPagina", parameters)
+                .ToListAsync();
+
+            return Ok(boletos);
+        }
+        // GET: api/boletos/searchbycodigo/{codigo}
+        [HttpGet("searchbycodigo/{codigo}")]
+        public async Task<ActionResult<IEnumerable<boleto>>> SearchByCodigo(string codigo)
+        {
+            if (string.IsNullOrWhiteSpace(codigo))
+                return BadRequest("El código no puede estar vacío.");
+
+            try
+            {
+                var param = new SqlParameter("@codigoBoleto", codigo);
+
+                var boletos = await _context.boletos
+                    .FromSqlRaw("EXEC dbo.spObtenerBoletoPorCodigo @codigoBoleto", param)
+                    .ToListAsync();
+
+                if (boletos == null || boletos.Count == 0)
+                    return NotFound();
+
+                return Ok(boletos);
+            }
+            catch (Exception ex)
+            {
+                // Aquí puedes loguear el error si tienes un logger
+                return StatusCode(500, $"Error interno: {ex.Message}");
+            }
+        }
+
+
     }
 }
