@@ -2169,253 +2169,6 @@
     ]
   },
   {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "Putvuelo",
-    "RelativePath": "api/vueloes/actualizar/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "vuelo",
-        "Type": "xpectrum_api.models.vuelo",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "BuscarVuelos",
-    "RelativePath": "api/vueloes/buscar",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "origenId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "destinoId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "fechaSalidaInicio",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "fechaSalidaFin",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "estadoVuelo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "codigoVuelo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "pagina",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tamPagina",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "Getvuelo",
-    "RelativePath": "api/vueloes/buscar/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.vuelo",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "GetVueloPorCodigo",
-    "RelativePath": "api/vueloes/buscarPorCodigo/{codigoVuelo}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "codigoVuelo",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.vuelo",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "ContarVuelos",
-    "RelativePath": "api/vueloes/contar",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "origenId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "destinoId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "fechaSalidaInicio",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "fechaSalidaFin",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "estadoVuelo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "codigoVuelo",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "Deletevuelo",
-    "RelativePath": "api/vueloes/eliminar/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "Postvuelo",
-    "RelativePath": "api/vueloes/enviar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "vuelo",
-        "Type": "xpectrum_api.models.vuelo",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "xpectrum_api.models.vuelo",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Xpectrum_API.Controllers.vueloesController",
-    "Method": "Getvuelos",
-    "RelativePath": "api/vueloes/listar",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[xpectrum_api.models.vuelo, Xpectrum_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Xpectrum_API.Controllers.VuelosController",
     "Method": "PostVuelo",
     "RelativePath": "api/Vuelos",
@@ -2515,6 +2268,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "XpectrumAPI.Controllers.VuelosController",
+    "Method": "GetVuelosDisponibles",
+    "RelativePath": "api/Vuelos/GetVuelosDisponibles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Xpectrum_API.Controllers.VuelosController",
     "Method": "GetVuelos",
     "RelativePath": "api/Vuelos/listar",
@@ -2533,6 +2296,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "XpectrumAPI.Controllers.VuelosController",
+    "Method": "ObtenerPasajerosPorCodigoVuelo",
+    "RelativePath": "api/Vuelos/ObtenerPasajerosPorCodigoVuelo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoVuelo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Xpectrum_API.Controllers.VuelosController",
@@ -2559,15 +2338,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "XpectrumAPI.Controllers.VuelosController",
-    "Method": "GetVuelosPasajeros",
-    "RelativePath": "api/Vuelos/Vuelosxpasajeros",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
   }
 ]

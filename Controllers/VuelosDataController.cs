@@ -16,52 +16,46 @@ namespace XpectrumAPI.Controllers
         [HttpGet("GetVuelos")]
         public async Task<IActionResult> GetVuelos()
         {
-            var vuelos = new List<VueloDTO>();
+            var vuelos = new List<VUELODATA>();
 
-            // Conexión a la base de datos SQL Server
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
 
-                // Consulta que llama al procedimiento almacenado
-                using (var command = new SqlCommand("dbo.Splistadodevuelosinvocados", connection))
+                using (var command = new SqlCommand("dbo.ListarVuelos", connection)) // Procedimiento almacenado para todos los vuelos
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    // Ejecutar el procedimiento y leer los resultados
                     using (var reader = await command.ExecuteReaderAsync())
                     {
                         while (await reader.ReadAsync())
                         {
-                            // Aquí tratamos los valores de horaSalida y horaLlegada, si son TimeSpan
-                            var horaSalida = reader.IsDBNull(reader.GetOrdinal("horaSalida")) ? (TimeSpan?)null : reader.GetTimeSpan(reader.GetOrdinal("horaSalida"));
-                            var horaLlegada = reader.IsDBNull(reader.GetOrdinal("horaLlegada")) ? (TimeSpan?)null : reader.GetTimeSpan(reader.GetOrdinal("horaLlegada"));
-
-                            string horaSalidaString = horaSalida.HasValue ? horaSalida.Value.ToString(@"hh\:mm\:ss") : "00:00:00";
-                            string horaLlegadaString = horaLlegada.HasValue ? horaLlegada.Value.ToString(@"hh\:mm\:ss") : "00:00:00";
-
-                            vuelos.Add(new VueloDTO
+                            vuelos.Add(new VUELODATA
                             {
+                                VueloId = reader.IsDBNull(reader.GetOrdinal("vueloId")) ? 0 : reader.GetInt32(reader.GetOrdinal("vueloId")),
                                 CodigoVuelo = reader.IsDBNull(reader.GetOrdinal("codigoVuelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("codigoVuelo")),
-                                FechaSalida = reader.IsDBNull(reader.GetOrdinal("fechaSalida")) ? default(DateTime) : reader.GetDateTime(reader.GetOrdinal("fechaSalida")),
-                                HoraSalida = horaSalidaString,  // Usamos la variable con formato string
-                                FechaLlegada = reader.IsDBNull(reader.GetOrdinal("fechaLlegada")) ? default(DateTime) : reader.GetDateTime(reader.GetOrdinal("fechaLlegada")),
-                                HoraLlegada = horaLlegadaString, // Usamos la variable con formato string
-                                DuracionHoras = reader.IsDBNull(reader.GetOrdinal("duracionHoras")) ? 0 : reader.GetInt32(reader.GetOrdinal("duracionHoras")),
-                                DuracionMinutos = reader.IsDBNull(reader.GetOrdinal("duracionMinutos")) ? 0 : reader.GetInt32(reader.GetOrdinal("duracionMinutos")),
-                                EstadoVueloFinal = reader.IsDBNull(reader.GetOrdinal("estadoVueloFinal")) ? string.Empty : reader.GetString(reader.GetOrdinal("estadoVueloFinal")),
-                                AeropuertoOrigen = reader.IsDBNull(reader.GetOrdinal("aeropuertoOrigen")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeropuertoOrigen")),
-                                AeropuertoDestino = reader.IsDBNull(reader.GetOrdinal("aeropuertoDestino")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeropuertoDestino")),
-                                AeronaveModelo = reader.IsDBNull(reader.GetOrdinal("aeronaveModelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeronaveModelo")),
-                                AeronaveCapacidad = reader.IsDBNull(reader.GetOrdinal("aeronaveCapacidad")) ? 0 : reader.GetInt32(reader.GetOrdinal("aeronaveCapacidad")),
+                                OrigenId = reader.IsDBNull(reader.GetOrdinal("origenId")) ? 0 : reader.GetInt32(reader.GetOrdinal("origenId")),
+                                DestinoId = reader.IsDBNull(reader.GetOrdinal("destinoId")) ? 0 : reader.GetInt32(reader.GetOrdinal("destinoId")),
+                                FechaSalida = reader.IsDBNull(reader.GetOrdinal("fechaSalida")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("fechaSalida")),
+                                HoraSalida = reader.IsDBNull(reader.GetOrdinal("horaSalida")) ? TimeSpan.Zero : reader.GetTimeSpan(reader.GetOrdinal("horaSalida")),
+                                FechaLlegada = reader.IsDBNull(reader.GetOrdinal("fechaLlegada")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("fechaLlegada")),
+                                HoraLlegada = reader.IsDBNull(reader.GetOrdinal("horaLlegada")) ? TimeSpan.Zero : reader.GetTimeSpan(reader.GetOrdinal("horaLlegada")),
                                 EstadoVuelo = reader.IsDBNull(reader.GetOrdinal("estadoVuelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("estadoVuelo")),
-                                TipoViaje = reader.IsDBNull(reader.GetOrdinal("tipoviaje")) ? string.Empty : reader.GetString(reader.GetOrdinal("tipoviaje")),
-                                Clase = reader.IsDBNull(reader.GetOrdinal("clase")) ? string.Empty : reader.GetString(reader.GetOrdinal("clase")),
-                                Beneficio = reader.IsDBNull(reader.GetOrdinal("beneficio")) ? string.Empty : reader.GetString(reader.GetOrdinal("beneficio")),
-                                PrecioUSD = reader.IsDBNull(reader.GetOrdinal("preciousd")) ? 0 : reader.GetDecimal(reader.GetOrdinal("preciousd")),
-                                PrecioPEN = reader.IsDBNull(reader.GetOrdinal("preciopen")) ? 0 : reader.GetDecimal(reader.GetOrdinal("preciopen")),
-                                CiudadOrigen = reader.IsDBNull(reader.GetOrdinal("ciudadOrigen")) ? string.Empty : reader.GetString(reader.GetOrdinal("ciudadOrigen")),
-                                CiudadDestino = reader.IsDBNull(reader.GetOrdinal("ciudadDestino")) ? string.Empty : reader.GetString(reader.GetOrdinal("ciudadDestino"))
+                                AeronaveId = reader.IsDBNull(reader.GetOrdinal("aeronaveId")) ? 0 : reader.GetInt32(reader.GetOrdinal("aeronaveId")),
+                                Aerolinea = reader.IsDBNull(reader.GetOrdinal("aerolinea")) ? string.Empty : reader.GetString(reader.GetOrdinal("aerolinea")),
+                                CodigoAerolinea = reader.IsDBNull(reader.GetOrdinal("codigoAerolinea")) ? string.Empty : reader.GetString(reader.GetOrdinal("codigoAerolinea")),
+                                TripulacionCapitan = reader.IsDBNull(reader.GetOrdinal("tripulacionCapitan")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionCapitan")),
+                                TripulacionCopiloto = reader.IsDBNull(reader.GetOrdinal("tripulacionCopiloto")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionCopiloto")),
+                                TripulacionAuxiliares = reader.IsDBNull(reader.GetOrdinal("tripulacionAuxiliares")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionAuxiliares")),
+                                EscalaId = reader.IsDBNull(reader.GetOrdinal("escalaId")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("escalaId")),
+                                DuracionEscala = reader.IsDBNull(reader.GetOrdinal("duracionEscala")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("duracionEscala")),
+                                ServiciosAdicionales = reader.IsDBNull(reader.GetOrdinal("serviciosAdicionales")) ? string.Empty : reader.GetString(reader.GetOrdinal("serviciosAdicionales")),
+                                TarifaEspecial = reader.IsDBNull(reader.GetOrdinal("tarifaEspecial")) ? 0 : reader.GetDecimal(reader.GetOrdinal("tarifaEspecial")),
+                                Moneda = reader.IsDBNull(reader.GetOrdinal("moneda")) ? string.Empty : reader.GetString(reader.GetOrdinal("moneda")),
+                                CondicionesAdicionales = reader.IsDBNull(reader.GetOrdinal("condicionesAdicionales")) ? string.Empty : reader.GetString(reader.GetOrdinal("condicionesAdicionales")),
+                                PrecioUSD = reader.IsDBNull(reader.GetOrdinal("precioUSD")) ? 0 : reader.GetDecimal(reader.GetOrdinal("precioUSD")),
+                                PrecioPEN = reader.IsDBNull(reader.GetOrdinal("precioPEN")) ? 0 : reader.GetDecimal(reader.GetOrdinal("precioPEN")),
+                                Imagen = reader.IsDBNull(reader.GetOrdinal("imagen")) ? string.Empty : reader.GetString(reader.GetOrdinal("imagen"))
                             });
                         }
                     }
@@ -70,92 +64,135 @@ namespace XpectrumAPI.Controllers
 
             return Ok(vuelos);
         }
-
-        [HttpGet("Vuelosxpasajeros")]
-        public async Task<IActionResult> GetVuelosPasajeros()
+        [HttpGet("GetVuelosDisponibles")]
+        public async Task<IActionResult> GetVuelosDisponibles()
         {
-            var vuelos = new List<VueloDTO>();
+            var vuelos = new List<VUELODATA>();
 
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
 
-                // Llamar al procedimiento almacenado VueloXpsj
-                using (var command = new SqlCommand("VueloXpsj", connection))
+                using (var command = new SqlCommand("dbo.ListarVuelosDisponibles", connection)) // Procedimiento almacenado para vuelos disponibles
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    // Ejecutar el procedimiento almacenado y leer los resultados
                     using (var reader = await command.ExecuteReaderAsync())
                     {
                         while (await reader.ReadAsync())
                         {
-                            // Convertir TimeSpan (horaSalida y horaLlegada) de la base de datos
-                            var horaSalida = reader.IsDBNull(reader.GetOrdinal("horaSalida")) ? (TimeSpan?)null : reader.GetTimeSpan(reader.GetOrdinal("horaSalida"));
-                            var horaLlegada = reader.IsDBNull(reader.GetOrdinal("horaLlegada")) ? (TimeSpan?)null : reader.GetTimeSpan(reader.GetOrdinal("horaLlegada"));
-
-                            // Convertir TimeSpan a string en formato "hh:mm:ss"
-                            string horaSalidaString = horaSalida.HasValue ? horaSalida.Value.ToString(@"hh\:mm\:ss") : "00:00:00";
-                            string horaLlegadaString = horaLlegada.HasValue ? horaLlegada.Value.ToString(@"hh\:mm\:ss") : "00:00:00";
-
-                            // Añadir los vuelos a la lista
-                            vuelos.Add(new VueloDTO
+                            vuelos.Add(new VUELODATA
                             {
+                                VueloId = reader.IsDBNull(reader.GetOrdinal("vueloId")) ? 0 : reader.GetInt32(reader.GetOrdinal("vueloId")),
                                 CodigoVuelo = reader.IsDBNull(reader.GetOrdinal("codigoVuelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("codigoVuelo")),
-                                FechaSalida = reader.IsDBNull(reader.GetOrdinal("fechaSalida")) ? default(DateTime) : reader.GetDateTime(reader.GetOrdinal("fechaSalida")),
-                                HoraSalida = horaSalidaString,  // Usamos la variable con formato string
-                                FechaLlegada = reader.IsDBNull(reader.GetOrdinal("fechaLlegada")) ? default(DateTime) : reader.GetDateTime(reader.GetOrdinal("fechaLlegada")),
-                                HoraLlegada = horaLlegadaString, // Usamos la variable con formato string
-                                DuracionHoras = reader.IsDBNull(reader.GetOrdinal("duracionHoras")) ? 0 : reader.GetInt32(reader.GetOrdinal("duracionHoras")),
-                                DuracionMinutos = reader.IsDBNull(reader.GetOrdinal("duracionMinutos")) ? 0 : reader.GetInt32(reader.GetOrdinal("duracionMinutos")),
-                                EstadoVueloFinal = reader.IsDBNull(reader.GetOrdinal("estadoVueloFinal")) ? string.Empty : reader.GetString(reader.GetOrdinal("estadoVueloFinal")),
-                                AeropuertoOrigen = reader.IsDBNull(reader.GetOrdinal("aeropuertoOrigen")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeropuertoOrigen")),
-                                AeropuertoDestino = reader.IsDBNull(reader.GetOrdinal("aeropuertoDestino")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeropuertoDestino")),
-                                AeronaveModelo = reader.IsDBNull(reader.GetOrdinal("aeronaveModelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("aeronaveModelo")),
-                                AeronaveCapacidad = reader.IsDBNull(reader.GetOrdinal("aeronaveCapacidad")) ? 0 : reader.GetInt32(reader.GetOrdinal("aeronaveCapacidad")),
+                                OrigenId = reader.IsDBNull(reader.GetOrdinal("origenId")) ? 0 : reader.GetInt32(reader.GetOrdinal("origenId")),
+                                DestinoId = reader.IsDBNull(reader.GetOrdinal("destinoId")) ? 0 : reader.GetInt32(reader.GetOrdinal("destinoId")),
+                                FechaSalida = reader.IsDBNull(reader.GetOrdinal("fechaSalida")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("fechaSalida")),
+                                HoraSalida = reader.IsDBNull(reader.GetOrdinal("horaSalida")) ? TimeSpan.Zero : reader.GetTimeSpan(reader.GetOrdinal("horaSalida")),
+                                FechaLlegada = reader.IsDBNull(reader.GetOrdinal("fechaLlegada")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("fechaLlegada")),
+                                HoraLlegada = reader.IsDBNull(reader.GetOrdinal("horaLlegada")) ? TimeSpan.Zero : reader.GetTimeSpan(reader.GetOrdinal("horaLlegada")),
                                 EstadoVuelo = reader.IsDBNull(reader.GetOrdinal("estadoVuelo")) ? string.Empty : reader.GetString(reader.GetOrdinal("estadoVuelo")),
-                                TipoViaje = reader.IsDBNull(reader.GetOrdinal("tipoviaje")) ? string.Empty : reader.GetString(reader.GetOrdinal("tipoviaje")),
-                                Clase = reader.IsDBNull(reader.GetOrdinal("clase")) ? string.Empty : reader.GetString(reader.GetOrdinal("clase")),
-                                Beneficio = reader.IsDBNull(reader.GetOrdinal("beneficio")) ? string.Empty : reader.GetString(reader.GetOrdinal("beneficio")),
-                                PrecioUSD = reader.IsDBNull(reader.GetOrdinal("preciousd")) ? 0 : reader.GetDecimal(reader.GetOrdinal("preciousd")),
-                                PrecioPEN = reader.IsDBNull(reader.GetOrdinal("preciopen")) ? 0 : reader.GetDecimal(reader.GetOrdinal("preciopen")),
-                                CiudadOrigen = reader.IsDBNull(reader.GetOrdinal("ciudadOrigen")) ? string.Empty : reader.GetString(reader.GetOrdinal("ciudadOrigen")),
-                                CiudadDestino = reader.IsDBNull(reader.GetOrdinal("ciudadDestino")) ? string.Empty : reader.GetString(reader.GetOrdinal("ciudadDestino")),
-                                NombreUsuario = reader.IsDBNull(reader.GetOrdinal("NombreUsuario")) ? string.Empty : reader.GetString(reader.GetOrdinal("NombreUsuario")),
-                                DiaSemana = reader.IsDBNull(reader.GetOrdinal("DiaSemana")) ? string.Empty : reader.GetString(reader.GetOrdinal("DiaSemana"))
+                                AeronaveId = reader.IsDBNull(reader.GetOrdinal("aeronaveId")) ? 0 : reader.GetInt32(reader.GetOrdinal("aeronaveId")),
+                                Aerolinea = reader.IsDBNull(reader.GetOrdinal("aerolinea")) ? string.Empty : reader.GetString(reader.GetOrdinal("aerolinea")),
+                                CodigoAerolinea = reader.IsDBNull(reader.GetOrdinal("codigoAerolinea")) ? string.Empty : reader.GetString(reader.GetOrdinal("codigoAerolinea")),
+                                TripulacionCapitan = reader.IsDBNull(reader.GetOrdinal("tripulacionCapitan")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionCapitan")),
+                                TripulacionCopiloto = reader.IsDBNull(reader.GetOrdinal("tripulacionCopiloto")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionCopiloto")),
+                                TripulacionAuxiliares = reader.IsDBNull(reader.GetOrdinal("tripulacionAuxiliares")) ? string.Empty : reader.GetString(reader.GetOrdinal("tripulacionAuxiliares")),
+                                EscalaId = reader.IsDBNull(reader.GetOrdinal("escalaId")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("escalaId")),
+                                DuracionEscala = reader.IsDBNull(reader.GetOrdinal("duracionEscala")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("duracionEscala")),
+                                ServiciosAdicionales = reader.IsDBNull(reader.GetOrdinal("serviciosAdicionales")) ? string.Empty : reader.GetString(reader.GetOrdinal("serviciosAdicionales")),
+                                TarifaEspecial = reader.IsDBNull(reader.GetOrdinal("tarifaEspecial")) ? 0 : reader.GetDecimal(reader.GetOrdinal("tarifaEspecial")),
+                                Moneda = reader.IsDBNull(reader.GetOrdinal("moneda")) ? string.Empty : reader.GetString(reader.GetOrdinal("moneda")),
+                                CondicionesAdicionales = reader.IsDBNull(reader.GetOrdinal("condicionesAdicionales")) ? string.Empty : reader.GetString(reader.GetOrdinal("condicionesAdicionales")),
+                                PrecioUSD = reader.IsDBNull(reader.GetOrdinal("precioUSD")) ? 0 : reader.GetDecimal(reader.GetOrdinal("precioUSD")),
+                                PrecioPEN = reader.IsDBNull(reader.GetOrdinal("precioPEN")) ? 0 : reader.GetDecimal(reader.GetOrdinal("precioPEN")),
+                                Imagen = reader.IsDBNull(reader.GetOrdinal("imagen")) ? string.Empty : reader.GetString(reader.GetOrdinal("imagen"))
                             });
                         }
                     }
                 }
             }
 
-            return Ok(vuelos);  // Retornar la lista de vuelos como respuesta
+            return Ok(vuelos);
         }
-    }
+        // Obtener los pasajeros por el código de vuelo
+        [HttpGet("ObtenerPasajerosPorCodigoVuelo")]
+        public async Task<IActionResult> ObtenerPasajerosPorCodigoVuelo(string codigoVuelo)
+        {
+            var pasajeros = new List<Pasajero>();
 
-    public class VueloDTO
-    {
-        public string CodigoVuelo { get; set; }
-        public DateTime FechaSalida { get; set; }
-        public string HoraSalida { get; set; }
-        public DateTime FechaLlegada { get; set; }
-        public string HoraLlegada { get; set; }
-        public int DuracionHoras { get; set; }
-        public int DuracionMinutos { get; set; }
-        public string EstadoVueloFinal { get; set; }
-        public string AeropuertoOrigen { get; set; }
-        public string AeropuertoDestino { get; set; }
-        public string AeronaveModelo { get; set; }
-        public int AeronaveCapacidad { get; set; }
-        public string EstadoVuelo { get; set; }
-        public string TipoViaje { get; set; }
-        public string Clase { get; set; }
-        public string Beneficio { get; set; }
-        public decimal PrecioUSD { get; set; }
-        public decimal PrecioPEN { get; set; }
-        public string CiudadOrigen { get; set; }
-        public string CiudadDestino { get; set; }
-        public string NombreUsuario { get; set; }
-        public string DiaSemana { get; set; }
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                // Ejecutamos el procedimiento almacenado usando Dapper
+                var result = await connection.QueryAsync<Pasajero>(
+                    "ObtenerPasajerosPorCodigoVuelo",
+                    new { codigoVuelo },
+                    commandType: System.Data.CommandType.StoredProcedure
+                );
+
+                pasajeros.AddRange(result);
+            }
+
+            if (pasajeros.Count == 0)
+            {
+                return NotFound("No se encontraron pasajeros para el vuelo especificado.");
+            }
+
+            return Ok(pasajeros);
+        }
+
+        // Modelo para los datos de los pasajeros
+        public class Pasajero
+        {
+            public string Nombre { get; set; }
+            public string Email { get; set; }
+            public string Telefono { get; set; }
+            public int UsuarioId { get; set; }
+            public DateTime FechaReserva { get; set; }
+            public string TipoPago { get; set; }
+            public decimal TotalPago { get; set; }
+            public DateTime FechaLlegada { get; set; }
+            public TimeSpan HoraLlegada { get; set; }
+            public DateTime FechaSalida { get; set; }
+            public TimeSpan HoraSalida { get; set; }
+            public string EstadoVuelo { get; set; }
+            public string CodigoVuelo { get; set; }
+            public decimal PrecioUSD { get; set; }
+            public decimal PrecioPEN { get; set; }
+            public string Imagen { get; set; }
+        }
+    
+
+public class VUELODATA
+        {
+            public int VueloId { get; set; }
+            public string CodigoVuelo { get; set; }
+            public int OrigenId { get; set; }
+            public int DestinoId { get; set; }
+            public DateTime FechaSalida { get; set; }
+            public TimeSpan HoraSalida { get; set; }
+            public DateTime FechaLlegada { get; set; }
+            public TimeSpan HoraLlegada { get; set; }
+            public string EstadoVuelo { get; set; }
+            public int AeronaveId { get; set; }
+            public string Aerolinea { get; set; }
+            public string CodigoAerolinea { get; set; }
+            public string TripulacionCapitan { get; set; }
+            public string TripulacionCopiloto { get; set; }
+            public string TripulacionAuxiliares { get; set; }
+            public int? EscalaId { get; set; }
+            public int? DuracionEscala { get; set; }
+            public string ServiciosAdicionales { get; set; }
+            public decimal TarifaEspecial { get; set; }
+            public string Moneda { get; set; }
+            public string CondicionesAdicionales { get; set; }
+            public decimal PrecioUSD { get; set; }
+            public decimal PrecioPEN { get; set; }
+            public string Imagen { get; set; }  // Nueva propiedad para almacenar la imagen
+        }
+
     }
 }
+

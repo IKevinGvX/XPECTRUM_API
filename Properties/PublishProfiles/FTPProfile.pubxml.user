@@ -5,7 +5,7 @@
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQGoTgK7zjUOZRqGcTpzuRQAAAAACAAAAAAAQZgAAAAEAACAAAACRN7XduM+/zzNbrKOma9wZAJzSm2Xp1pNBYeaGBB0r2gAAAAAOgAAAAAIAACAAAACTGniTj3i7ZZRv36sRFLj8h1H9W/MGqDC0DGwKKwZZJyAAAAAVQBzFnMuIcKD4EQiQwnA6m1pQ8NcT9JDubQXkTp9APEAAAAAbNkLJhCK6Ds6EfWMwOPFzps5wFs3fPLo9uup0J+1f3OWl23VSacl1uXmnaIvrG5y/D1exu1ZQLgpA6JBbSgsS</EncryptedPassword>
     <_PublishTargetUrl>ftp://apiswagger.somee.com/www.apiswagger.somee.com</_PublishTargetUrl>
-    <History>True|2025-06-07T06:19:20.8958431Z||;True|2025-06-06T00:39:26.9160140-05:00||;True|2025-06-06T00:24:59.5442921-05:00||;True|2025-06-02T23:51:18.3975448-05:00||;True|2025-06-02T23:18:41.9917696-05:00||;False|2025-06-02T23:07:15.0154635-05:00||;True|2025-06-02T23:00:27.1948379-05:00||;True|2025-06-02T20:40:32.8791370-05:00||;True|2025-06-01T17:39:56.7785501-05:00||;True|2025-06-01T14:30:07.5626382-05:00||;True|2025-06-01T14:12:32.9113466-05:00||;</History>
+    <History>True|2025-06-09T00:45:38.4871098Z||;True|2025-06-08T19:24:05.8538280-05:00||;True|2025-06-07T18:17:09.5045627-05:00||;True|2025-06-07T17:27:43.2571173-05:00||;True|2025-06-07T01:19:20.8958431-05:00||;True|2025-06-06T00:39:26.9160140-05:00||;True|2025-06-06T00:24:59.5442921-05:00||;True|2025-06-02T23:51:18.3975448-05:00||;True|2025-06-02T23:18:41.9917696-05:00||;False|2025-06-02T23:07:15.0154635-05:00||;True|2025-06-02T23:00:27.1948379-05:00||;True|2025-06-02T20:40:32.8791370-05:00||;True|2025-06-01T17:39:56.7785501-05:00||;True|2025-06-01T14:30:07.5626382-05:00||;True|2025-06-01T14:12:32.9113466-05:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -22,7 +22,7 @@
       <publishTime>06/06/2025 00:26:42</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>06/07/2025 01:08:20</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="ar/Humanizer.resources.dll">
       <publishTime>01/29/2022 10:04:06</publishTime>
@@ -691,19 +691,19 @@
       <publishTime>01/29/2022 10:04:12</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/07/2025 01:08:20</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="Xpectrum_API.deps.json">
-      <publishTime>06/07/2025 01:08:19</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="Xpectrum_API.dll">
-      <publishTime>06/07/2025 01:08:15</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="Xpectrum_API.exe">
-      <publishTime>06/07/2025 01:08:15</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="Xpectrum_API.pdb">
-      <publishTime>06/07/2025 01:08:15</publishTime>
+      <publishTime>06/08/2025 19:34:30</publishTime>
     </File>
     <File Include="Xpectrum_API.runtimeconfig.json">
       <publishTime>06/07/2025 01:08:15</publishTime>
